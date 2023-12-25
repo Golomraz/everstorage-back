@@ -20,6 +20,9 @@ export class Transfer {
 
   @Prop()
   userName: string;
+
+  @Prop()
+  place: string;
 }
 
 export interface TransferData {

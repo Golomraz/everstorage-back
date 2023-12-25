@@ -9,6 +9,9 @@ export class CreateTransferDto {
 
     @IsNotEmpty()
     readonly userName: string;
+
+    @IsNotEmpty()
+    readonly place: string;
   }
 
 export interface Product {

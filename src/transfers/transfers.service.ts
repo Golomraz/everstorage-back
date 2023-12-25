@@ -15,7 +15,7 @@ export class TransferService {
     async create(createTransferDto: CreateTransferDto) {
         const storages = await this.storageService.findAll();
         const products = createTransferDto.products; 
-        const transfer: Transfer = {size: 0, data: [], type: createTransferDto.type, date: Date.now(), userName: createTransferDto.userName}
+        const transfer: Transfer = {size: 0, data: [], type: createTransferDto.type, date: Date.now(), userName: createTransferDto.userName, place: createTransferDto.place}
         const updatedStorage = [];
 
         if (createTransferDto.type === '0') {
