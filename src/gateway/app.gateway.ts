@@ -44,6 +44,16 @@ export class AppGateway implements OnGatewayDisconnect {
     });
   }
 
+  @SubscribeMessage('points')
+  async handlePaint(client: Socket, payload: any): Promise<void> {
+      client.to(payload.room).emit('paintings', payload)
+  }
+
+  @SubscribeMessage('clear')
+  async handleClear(client: Socket, payload: any): Promise<void> {
+      client.to(payload.room).emit('clear', payload)
+  }
+
   @SubscribeMessage('leave')
   async handleRoomLeave(client: Socket, payload: any): Promise<void> {
     client.leave(payload.data);
