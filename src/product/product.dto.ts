@@ -1,12 +1,9 @@
 import { IsNotEmpty } from "class-validator";
 
-export class CreateStorageDto {
+export class CreateProductDto {
     @IsNotEmpty()
     readonly name: string;
   
     @IsNotEmpty()
-    readonly size: string;
-
-    @IsNotEmpty()
-    readonly coordinates: number[];
+    readonly title: string;
   }

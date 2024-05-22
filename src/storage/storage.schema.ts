@@ -18,6 +18,9 @@ export class Storage {
   @Prop({ required: true })
   name: string;
 
+  @Prop({ required: true })
+  coordinates: number[];
+
 }
 
 export const StorageSchema = SchemaFactory.createForClass(Storage);

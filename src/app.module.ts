@@ -9,6 +9,7 @@ import { RoomModule } from './room/room.module';
 import { SocketUserModule } from './socket-user/socket-user.module';
 import { StorageModule } from './storage/storage.module';
 import { TransferModule } from './transfers/transfers.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { TransferModule } from './transfers/transfers.module';
     RoomModule,
     SocketUserModule,
     StorageModule,
+    ProductModule,
     TransferModule
   ],
   controllers: [AppController],
