@@ -9,4 +9,6 @@ export class CreateStorageDto {
 
     @IsNotEmpty()
     readonly coordinates: number[];
+
+    readonly adress: string;
   }

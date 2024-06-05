@@ -24,7 +24,7 @@ export class TransferService {
                 transfer.size += count;
                 while(count !== 0) {
                     
-                    const storage = storages.find((s) => s.sizeLeft !== 0);
+                    const storage = createTransferDto.storageID ? storages.find((s) => s.id === createTransferDto.storageID) : storages.find((s) => s.sizeLeft !== 0);
                     let added = storage.sizeLeft;
                     storage.sizeLeft = storage.sizeLeft - count;
                     if (storage.sizeLeft >= 0) {
@@ -34,7 +34,7 @@ export class TransferService {
                         count = Math.abs(storage.sizeLeft);
                         storage.sizeLeft = 0;
                     }
-                    
+                     
                     storage.products.push({
                         name: product.name,
                         count: added,
@@ -48,7 +48,6 @@ export class TransferService {
                             title: product.title
                         }
                     })
-                    console.error(product.name, storage)
                     updatedStorage.push(storage)
                     // await this.storageService.updateStorage(storage)
                 }

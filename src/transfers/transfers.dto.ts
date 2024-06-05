@@ -12,6 +12,8 @@ export class CreateTransferDto {
 
     @IsNotEmpty()
     readonly place: string;
+
+    readonly storageID: string;
   }
 
 export interface Product {
